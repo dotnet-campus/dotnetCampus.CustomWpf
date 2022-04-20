@@ -3,7 +3,21 @@
   <PropertyGroup>
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>dotnet-campus.snk</AssemblyOriginatorKeyFile>
+
+    <!-- Change this value based on where your local repo is located -->
+    <WpfRepoRoot>..\..\..\..</WpfRepoRoot>
+    <!-- Change based on which assemblies you build (Release/Debug) -->
+    <WpfConfig>$(Configuration)</WpfConfig>
+
+    <WpfOuputFolder Condition="'$(WpfConfig)' == 'Debug'">Microsoft.DotNet.Wpf.GitHub.Debug</WpfOuputFolder>
+    <WpfOuputFolder Condition="'$(WpfConfig)' == 'Release'">Microsoft.DotNet.Wpf.GitHub</WpfOuputFolder>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="$(WpfRepoRoot)\artifacts\packaging\$(WpfConfig)\$(WpfOuputFolder)\lib\net6.0\*.dll" />
+
+  </ItemGroup>
 
 </Project>
