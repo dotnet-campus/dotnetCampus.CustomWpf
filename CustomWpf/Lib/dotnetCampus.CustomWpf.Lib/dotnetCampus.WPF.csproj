@@ -7,7 +7,7 @@
     <AssemblyOriginatorKeyFile>dotnet-campus.snk</AssemblyOriginatorKeyFile>
 
     <!-- Change this value based on where your local repo is located -->
-    <WpfRepoRoot>..\..\..\..</WpfRepoRoot>
+    <WpfRepoRoot>..\..\</WpfRepoRoot>
     <!-- Change based on which assemblies you build (Release/Debug) -->
     <WpfConfig>$(Configuration)</WpfConfig>
 
