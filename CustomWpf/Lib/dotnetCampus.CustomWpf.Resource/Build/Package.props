@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <CustomWpfAssetsFolder>$(MSBuildThisFileDirectory)..\Assets\</CustomWpfAssetsFolder>
+  </PropertyGroup>
+
+
+</Project>

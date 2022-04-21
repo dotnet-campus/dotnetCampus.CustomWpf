@@ -1,10 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <UseWPF>true</UseWPF>
-    <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>dotnet-campus.snk</AssemblyOriginatorKeyFile>
+    <TargetFramework>net6.0</TargetFramework>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
 
     <WpfRepoRoot>..\..\..\</WpfRepoRoot>
 
@@ -13,10 +12,12 @@
 
     <WpfOuputFolder Condition="'$(WpfConfig)' == 'Debug'">Microsoft.DotNet.Wpf.GitHub.Debug</WpfOuputFolder>
     <WpfOuputFolder Condition="'$(WpfConfig)' == 'Release'">Microsoft.DotNet.Wpf.GitHub</WpfOuputFolder>
+
+    <ArtifactsFolder>$(WpfRepoRoot)\artifacts\packaging\$(WpfConfig)\$(WpfOuputFolder)</ArtifactsFolder>
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="$(WpfRepoRoot)\artifacts\packaging\$(WpfConfig)\$(WpfOuputFolder)\lib\net6.0\*.dll" />
+    <None Include="$(ArtifactsFolder)\**\*" Pack="True" PackagePath="\Assets\"></None>
+    <None Include="Build\Package.props" Pack="True" PackagePath="\build\$(PackageId).props" />
   </ItemGroup>
-
 </Project>
