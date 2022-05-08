@@ -17,7 +17,7 @@ jobs:
     #     name: WPF_Debug
     #     path: ./artifacts/packages/Debug/NonShipping
 
-  Build:
+  BuildRelease:
 
     runs-on: windows-latest
 
