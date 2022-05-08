@@ -12,6 +12,15 @@ class MainTask
     public void Run()
     {
         var appConfigurator = AppConfigurator.GetAppConfigurator();
+
+        var commandLineArgs = Environment.GetCommandLineArgs();
+        appConfigurator.AddCommandLine(commandLineArgs, new Dictionary<string, string>()
+        {
+            {"t","Tag" }
+        });
+
+        var tagVersion = appConfigurator.Default["Tag"];
+
         FileSniff fileSniff = new FileSniff(appConfigurator);
         fileSniff.Sniff();
 

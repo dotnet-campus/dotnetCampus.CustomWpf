@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using dotnetCampus.Configurations;
+using dotnetCampus.DotNETBuild.Utils;
 
 namespace dotnetCampus.WPF.NuGet;
 
