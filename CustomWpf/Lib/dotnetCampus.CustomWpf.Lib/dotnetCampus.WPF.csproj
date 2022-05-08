@@ -15,6 +15,12 @@
     <WpfOuputFolder Condition="'$(WpfConfig)' == 'Release'">Microsoft.DotNet.Wpf.GitHub</WpfOuputFolder>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <EmbedAllSources>true</EmbedAllSources>
+    <!-- Include symbol files (*.pdb) in the built .nupkg -->
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+  </PropertyGroup>
+  
   <ItemGroup>
     <Reference Include="$(WpfRepoRoot)\artifacts\packaging\$(WpfConfig)\$(WpfOuputFolder)\lib\net6.0\*.dll" />
   </ItemGroup>
