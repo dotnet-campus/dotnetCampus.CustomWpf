@@ -9,9 +9,9 @@ The reason for creating this repo is that we can't wait for some fascinating fea
 
 | NuGet | Version |
 |--|--|
-|dotnetCampus.WPF|![](https://img.shields.io/nuget/v/dotnetCampus.WPF.svg)](https://www.nuget.org/packages/dotnetCampus.WPF)|
-|dotnetCampus.WPF.Dependencies|![](https://img.shields.io/nuget/v/dotnetCampus.WPF.Resource.svg)](https://www.nuget.org/packages/dotnetCampus.WPF.Resource)|
-|dotnetCampus.WPF.Resource|![](https://img.shields.io/nuget/v/dotnetCampus.WPF.Dependencies.svg)](https://www.nuget.org/packages/dotnetCampus.WPF.Dependencies)|
+|dotnetCampus.WPF|[![](https://img.shields.io/nuget/v/dotnetCampus.WPF.svg)](https://www.nuget.org/packages/dotnetCampus.WPF)|
+|dotnetCampus.WPF.Dependencies|[![](https://img.shields.io/nuget/v/dotnetCampus.WPF.Resource.svg)](https://www.nuget.org/packages/dotnetCampus.WPF.Resource)|
+|dotnetCampus.WPF.Resource|[![](https://img.shields.io/nuget/v/dotnetCampus.WPF.Dependencies.svg)](https://www.nuget.org/packages/dotnetCampus.WPF.Dependencies)|
 
 ## What version are we on?
 
