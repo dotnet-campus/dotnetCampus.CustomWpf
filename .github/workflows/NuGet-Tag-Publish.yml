@@ -1,0 +1,58 @@
+name: Build WPF
+
+on: 
+  push:
+    tags:
+    - '*'
+
+jobs:
+  # BuildDebug:
+
+  #   runs-on: windows-latest
+
+  #   steps:
+  #   - uses: actions/checkout@v1
+  #   # - name: Install Nuget
+  #   #   uses: nuget/setup-nuget@v1
+  #   #   with:
+  #   #     nuget-version: '5.x'
+  #   - name: Build
+  #     run: .\build.cmd -pack -ci -configuration Debug -prepareMachine /p:Platform=x86
+  #   - name: Push
+  #     uses: actions/upload-artifact@v1
+  #     with:
+  #       name: WPF_Debug
+  #       path: ./artifacts/packages/Debug/NonShipping
+
+  Build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install Tools
+      run: dotnet tool install -g dotnetCampus.TagToVersion --add-source https://api.nuget.org/v3/index.json
+    - name: Set Package TagToVersion
+      run: dotnet tagtoversion -t ${{ github.ref }} -f CustomWpf\build\Version.props
+    - name: Build WPF
+      run: .\build.cmd -pack -ci -configuration Release -prepareMachine /p:Platform=x86
+    - name: Pack NuGet
+      run: dotnet pack CustomWpf -c release
+
+    - name: Install Nuget
+      uses: nuget/setup-nuget@v1
+      with:
+        nuget-version: '5.x'
+    - name: Add private GitHub registry to NuGet
+      run: |
+        nuget sources add -name github -Source https://nuget.pkg.github.com/dotnet-campus/index.json -Username dotnet-campus -Password ${{ secrets.GITHUB_TOKEN }}
+    - name: Push NuGet Package
+      run: |
+        nuget push .\bin\Release\*.nupkg -Source github -SkipDuplicate
+        nuget push .\bin\Release\*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${{ secrets.NugetKey }} 
+
+    # - name: Push
+    #   uses: actions/upload-artifact@v1
+    #   with:
+    #     name: WPF_Release
+    #     path: ./artifacts/packages/Release/NonShipping
