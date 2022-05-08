@@ -1,4 +1,4 @@
-name: Build WPF
+name: Publish Custom WPF
 
 on: 
   push:
