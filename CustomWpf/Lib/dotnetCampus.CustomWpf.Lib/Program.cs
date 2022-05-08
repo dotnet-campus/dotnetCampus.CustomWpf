@@ -5,7 +5,6 @@ using System.Windows.Media;
 using System.Windows.Media.Composition;
 using System.Windows.Navigation;
 
-
 namespace dotnetCampus.WPF
 {
     class Program
@@ -13,7 +12,7 @@ namespace dotnetCampus.WPF
         static void Main(string[] args)
         {
             Application application = new Application();
-            NavigationService applicationNavService = application.NavService;
+            //NavigationService applicationNavService = application.NavService;
         }
     }
 }
