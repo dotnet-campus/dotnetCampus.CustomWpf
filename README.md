@@ -4,8 +4,7 @@ This repository fork from [WPF](https://github.com/dotnet/wpf), but contains cod
 
 The reason for creating this repo is that we can't wait for some fascinating features.
 
-![](https://github.com/dotnet-campus/dotnetCampus.CustomWpf
-/workflows/Build%20WPF/badge.svg)
+![](https://github.com/dotnet-campus/dotnetCampus.CustomWpf/workflows/Build%20WPF/badge.svg)
 
 | NuGet | Version |
 |--|--|
