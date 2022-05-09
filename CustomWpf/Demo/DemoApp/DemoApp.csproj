@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="dotnetCampus.WPF" Version="6.0.4-alpha02" />
+    <PackageReference Include="dotnetCampus.WPF.Dependencies" Version="6.0.4-alpha02" />
+    <PackageReference Include="dotnetCampus.WPF.Resource" Version="6.0.4-alpha02" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DemoLib1\DemoLib1.csproj" />
   </ItemGroup>
 
