@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+
+    <WpfRepoRoot>..\..\..\</WpfRepoRoot>
+
+    <!-- Change based on which assemblies you build (Release/Debug) -->
+    <WpfConfig>$(Configuration)</WpfConfig>
+
+    <WpfOuputFolder Condition="'$(WpfConfig)' == 'Debug'">Microsoft.DotNet.Wpf.GitHub.Debug</WpfOuputFolder>
+    <WpfOuputFolder Condition="'$(WpfConfig)' == 'Release'">Microsoft.DotNet.Wpf.GitHub</WpfOuputFolder>
+
+    <ArtifactsFolder>$(WpfRepoRoot)\artifacts\packaging\$(WpfConfig)\$(WpfOuputFolder)</ArtifactsFolder>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="$(ArtifactsFolder)\**\*" Pack="True" PackagePath="\Assets\"></None>
+    <None Include="Build\Package.props" Pack="True" PackagePath="\build\$(PackageId).props" />
+  </ItemGroup>
+</Project>

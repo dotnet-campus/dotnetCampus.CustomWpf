@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Build\Package.targets" Pack="True" PackagePath="\build\$(PackageId).targets" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\dotnetCampus.CustomWpf.Resource\dotnetCampus.WPF.Resource.csproj" />
+  </ItemGroup>
+</Project>
