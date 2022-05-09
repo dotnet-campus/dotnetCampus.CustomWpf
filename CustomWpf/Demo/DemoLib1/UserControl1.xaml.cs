@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DemoLib2;
 
 namespace DemoLib1
 {
@@ -24,5 +25,7 @@ namespace DemoLib1
         {
             InitializeComponent();
         }
+
+        public Foo Foo { get; } = new Foo();
     }
 }
