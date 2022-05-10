@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{FE032A91-A79
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Packaging", "Packaging", "{27886E90-E328-4AE9-86DA-1F596554D26B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnetCampus.WPF.NuGet", "Packaging\dotnetCampus.WPF.NuGet\dotnetCampus.WPF.NuGet.csproj", "{FDC9151F-3544-4C68-9D05-D8E4935F1A9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnetCampus.WPF.NuGet", "Packaging\dotnetCampus.WPF.NuGet\dotnetCampus.WPF.NuGet.csproj", "{FDC9151F-3544-4C68-9D05-D8E4935F1A9F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnetCampus.WPF.Resource", "Lib\dotnetCampus.CustomWpf.Resource\dotnetCampus.WPF.Resource.csproj", "{D73CB485-6290-4E37-B441-8068E60CBF7E}"
 EndProject
@@ -18,7 +18,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		build\Version.props = build\Version.props
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnetCampus.WPF.Dependencies", "Lib\dotnetCampus.CustomWpf.Dependencies\dotnetCampus.WPF.Dependencies.csproj", "{39E01A9E-C352-4B7E-96CA-612A07937470}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnetCampus.WPF.Dependencies", "Lib\dotnetCampus.CustomWpf.Dependencies\dotnetCampus.WPF.Dependencies.csproj", "{39E01A9E-C352-4B7E-96CA-612A07937470}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{1FCB5593-B06F-4DC3-B63F-315CF6DCF2BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoApp", "Demo\DemoApp\DemoApp.csproj", "{3C3A4FD6-333B-480B-8354-3BB209FA89DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoLib1", "Demo\DemoLib1\DemoLib1.csproj", "{B892B53C-752A-4700-8845-CD095F3AC08B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoLib2", "Demo\DemoLib2\DemoLib2.csproj", "{17CCDE40-5335-479A-8B67-E7B0A1332EA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +50,18 @@ Global
 		{39E01A9E-C352-4B7E-96CA-612A07937470}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39E01A9E-C352-4B7E-96CA-612A07937470}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39E01A9E-C352-4B7E-96CA-612A07937470}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C3A4FD6-333B-480B-8354-3BB209FA89DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C3A4FD6-333B-480B-8354-3BB209FA89DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C3A4FD6-333B-480B-8354-3BB209FA89DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C3A4FD6-333B-480B-8354-3BB209FA89DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B892B53C-752A-4700-8845-CD095F3AC08B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B892B53C-752A-4700-8845-CD095F3AC08B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B892B53C-752A-4700-8845-CD095F3AC08B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B892B53C-752A-4700-8845-CD095F3AC08B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17CCDE40-5335-479A-8B67-E7B0A1332EA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17CCDE40-5335-479A-8B67-E7B0A1332EA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17CCDE40-5335-479A-8B67-E7B0A1332EA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17CCDE40-5335-479A-8B67-E7B0A1332EA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +71,9 @@ Global
 		{FDC9151F-3544-4C68-9D05-D8E4935F1A9F} = {27886E90-E328-4AE9-86DA-1F596554D26B}
 		{D73CB485-6290-4E37-B441-8068E60CBF7E} = {FE032A91-A790-4274-A194-02E161D1F14B}
 		{39E01A9E-C352-4B7E-96CA-612A07937470} = {FE032A91-A790-4274-A194-02E161D1F14B}
+		{3C3A4FD6-333B-480B-8354-3BB209FA89DB} = {1FCB5593-B06F-4DC3-B63F-315CF6DCF2BA}
+		{B892B53C-752A-4700-8845-CD095F3AC08B} = {1FCB5593-B06F-4DC3-B63F-315CF6DCF2BA}
+		{17CCDE40-5335-479A-8B67-E7B0A1332EA9} = {1FCB5593-B06F-4DC3-B63F-315CF6DCF2BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C25E6016-F278-457B-87D6-39EC0E0A6849}
