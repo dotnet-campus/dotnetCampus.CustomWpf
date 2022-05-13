@@ -1111,5 +1111,6 @@ namespace System.Xaml.Schema
     {
         public static void RegisterCreator<T>(Func<T> creator) { }
         public static void RegisterCreator(Type type, Func<object> creator) { }
+        public static void RegisterTypeCreator(Func<Type, Func<object>> typeCreator) { }
     }
 }

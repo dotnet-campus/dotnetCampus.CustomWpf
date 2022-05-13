@@ -22,10 +22,29 @@ namespace System.Xaml.Schema
             HasBeenRegister = true;
         }
 
+        public static void RegisterTypeCreator(Func<Type, Func<object>> typeCreator)
+        {
+            _typeCreator = typeCreator;
+            HasBeenRegister = true;
+        }
+
         internal static bool HasBeenRegister { get; private set; }
 
+        private Func<Type, Func<object>> _typeCreator;
+
         internal static bool TryGetCreator(Type type, out Func<object> creator)
-            => s_xamlObjectCreatorDictionary.TryGetValue(type, out creator);
+        {
+            if (_typeCreator != null)
+            {
+               creator = _typeCreator(type);
+               if (creator != null)
+               {
+                  return true;
+               }
+            }
+
+            return s_xamlObjectCreatorDictionary.TryGetValue(type, out creator);
+        }
 
         private static readonly ConcurrentDictionary<Type, Func<object>> s_xamlObjectCreatorDictionary =
             new ConcurrentDictionary<Type, Func<object>>();
