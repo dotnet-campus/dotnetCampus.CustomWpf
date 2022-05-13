@@ -6,8 +6,8 @@
     <Company>dotnet campus（.NET 职业技术学院）</Company>
 
     <Authors>dotnet-campus</Authors>
-    <RepositoryUrl>https://github.com/dotnet-campus/dotnetCampus.Ipc</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/dotnet-campus/dotnetCampus.Ipc</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/dotnet-campus/dotnetCampus.CustomWpf</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/dotnet-campus/dotnetCampus.CustomWpf</PackageProjectUrl>
     <Description>包含定制的 WPF 版本</Description>
 
     <RepositoryType>git</RepositoryType>
