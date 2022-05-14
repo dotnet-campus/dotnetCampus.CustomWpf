@@ -43,8 +43,10 @@ jobs:
       run: .\build.cmd -pack -ci -configuration Release -prepareMachine /p:Platform=x86
     - name: Build CustomWPF
       run: dotnet build CustomWpf -c Release
-    # - name: Push
-    #   uses: actions/upload-artifact@v1
-    #   with:
-    #     name: WPF_Release
-    #     path: ./artifacts/packages/Release/NonShipping
+    - name: Push To Artifact
+      # 每次构建完成，都将结果输出到 GitHub 的 Action 上，一次大概 50 MB 左右。提前输出可以方便先下下来本地调试 API 变更
+      uses: actions/upload-artifact@v1
+      with:
+        name: WPF_Release
+        path: ./artifacts/packages/Release/NonShipping
+        retention-days: 10 # 只需要存放最多 10 天即可。默认存放时间是 90 天，我感觉太多了
