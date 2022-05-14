@@ -30,7 +30,7 @@ namespace System.Xaml.Schema
 
         internal static bool HasBeenRegister { get; private set; }
 
-        private Func<Type, Func<object>> _typeCreator;
+        private static Func<Type, Func<object>> _typeCreator;
 
         internal static bool TryGetCreator(Type type, out Func<object> creator)
         {
