@@ -667,7 +667,9 @@ namespace System.Windows.Documents
                 Uri absoluteUri = BindUriHelper.GetUriToNavigate(dpo, baseUri, inputUri);
                 if (fragmentLength != 0)
                 {
-                    absoluteUri = new Uri(absoluteUri.ToString() + fragment, UriKind.RelativeOrAbsolute);
+                    StringBuilder absoluteUriString = new StringBuilder(absoluteUri.ToString());
+                    absoluteUriString.Append(fragment);
+                    absoluteUri = new Uri(absoluteUriString.ToString(), UriKind.RelativeOrAbsolute);
                 }
 
                 return absoluteUri;

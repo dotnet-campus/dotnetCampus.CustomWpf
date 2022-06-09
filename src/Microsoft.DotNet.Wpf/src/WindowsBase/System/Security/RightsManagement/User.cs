@@ -183,9 +183,13 @@ namespace System.Security.RightsManagement
         /// </summary>
         public override int GetHashCode()
         {
+
             if (!hashCalcIsDone)
             {
-                hashValue = (_name.ToUpperInvariant() + _authenticationType.ToString()).GetHashCode();
+                StringBuilder hashString = new StringBuilder(_name.ToUpperInvariant());
+                hashString.Append(_authenticationType.ToString());
+
+                hashValue = (hashString.ToString()).GetHashCode();
                 hashCalcIsDone = true;
             }
 

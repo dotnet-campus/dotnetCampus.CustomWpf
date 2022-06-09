@@ -1093,7 +1093,14 @@ namespace MS.Internal.IO.Packaging.CompoundFile
             ContentUser user
             )
         {
-            return string.Create(null, stackalloc char[128], $"{user.AuthenticationType}:{user.Name}");
+            // Use 9 since we don't do extra allocation for user.AuthenticationType.ToString()
+            //      to get the accurate length
+            StringBuilder userName = new StringBuilder(9 /* for Windows: or Passport: */ + user.Name.Length);
+            userName.Append(user.AuthenticationType.ToString());
+            userName.Append(':');
+            userName.Append(user.Name);
+
+            return userName.ToString();
         }
 
         /// <summary>
