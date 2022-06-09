@@ -4,7 +4,6 @@
 
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using MS.Internal.KnownBoxes;
 using MS.Internal.WindowsBase;  // for FriendAccessAllowed
 
 namespace System.Windows
@@ -57,8 +56,8 @@ namespace System.Windows
 
                     if (typeof(T) == typeof(bool))
                     {
-                        // Use shared boxed instances rather than creating new objects for each SetValue call.
-                        valueObject = BooleanBoxes.Box(Unsafe.As<T, bool>(ref value));
+                        // There are only two possible values. Use shared boxed instances rather than creating new objects for each SetValue call.
+                        valueObject = Unsafe.As<T, bool>(ref value) ? (s_true ??= true) : (s_false ??= false);
                     }
                     else
                     {
@@ -146,6 +145,11 @@ namespace System.Windows
         private T _defaultValue;
         private int _globalIndex;
         private bool _hasBeenSet;
+
+        /// <summary>A lazily boxed false value.</summary>
+        private static object s_false;
+        /// <summary>A lazily boxed true value.</summary>
+        private static object s_true;
 
         #endregion
     }
