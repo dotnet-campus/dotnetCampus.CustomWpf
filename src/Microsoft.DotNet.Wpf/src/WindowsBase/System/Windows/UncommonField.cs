@@ -2,8 +2,9 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+using System;
+using System.Diagnostics;
+
 using MS.Internal.WindowsBase;  // for FriendAccessAllowed
 
 namespace System.Windows
@@ -50,26 +51,14 @@ namespace System.Windows
                 EntryIndex entryIndex = instance.LookupEntry(_globalIndex);
 
                 // Set the value if it's not the default, otherwise remove the value.
-                if (!EqualityComparer<T>.Default.Equals(value, _defaultValue))
+                if (!object.ReferenceEquals(value, _defaultValue))
                 {
-                    object valueObject;
-
-                    if (typeof(T) == typeof(bool))
-                    {
-                        // There are only two possible values. Use shared boxed instances rather than creating new objects for each SetValue call.
-                        valueObject = Unsafe.As<T, bool>(ref value) ? (s_true ??= true) : (s_false ??= false);
-                    }
-                    else
-                    {
-                        valueObject = value;
-                    }
-
-                    instance.SetEffectiveValue(entryIndex, dp: null, _globalIndex, metadata: null, valueObject, BaseValueSourceInternal.Local);
+                    instance.SetEffectiveValue(entryIndex, null /* dp */, _globalIndex, null /* metadata */, value, BaseValueSourceInternal.Local);
                     _hasBeenSet = true;
                 }
                 else
                 {
-                    instance.UnsetEffectiveValue(entryIndex, dp: null, metadata: null);
+                    instance.UnsetEffectiveValue(entryIndex, null /* dp */, null /* metadata */);
                 }
             }
             else
@@ -145,11 +134,6 @@ namespace System.Windows
         private T _defaultValue;
         private int _globalIndex;
         private bool _hasBeenSet;
-
-        /// <summary>A lazily boxed false value.</summary>
-        private static object s_false;
-        /// <summary>A lazily boxed true value.</summary>
-        private static object s_true;
 
         #endregion
     }
