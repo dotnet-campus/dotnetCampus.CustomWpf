@@ -26,6 +26,10 @@ See [Merged PR ¡¤ Issue #10 ¡¤ dotnet-campus/dotnetCampus.CustomWpf](https://git
 
 We recommend that you submit the Pull Request to the official [WPF](https://github.com/dotnet/wpf) repository and then you can ask we to pick the commit to this repository. This repository does not accept commit.
 
+## Reference
+
+- https://github.com/Faithlife/wpf : This is a custom build of Windows Presentation Foundation maintained by Faithlife.
+
 -----
 
 # Windows Presentation Foundation (WPF)
