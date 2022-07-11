@@ -20,12 +20,15 @@ The reason for creating this repo is that we can't wait for some fascinating fea
 
 ## Features
 
-- [ToolTip closes immediately in high DPI by SamBent 路 Pull Request #6332 路 dotnet/wpf](https://github.com/dotnet/wpf/pull/6332)
-- [Try fix the first point in StylusPlugin in high DPI by lindexi 路 Pull Request #6428 路 dotnet/wpf](https://github.com/dotnet/wpf/pull/6428)
+See [Merged PR · Issue #10 · dotnet-campus/dotnetCampus.CustomWpf](https://github.com/dotnet-campus/dotnetCampus.CustomWpf/issues/10 )
 
 ## Contribution
 
 We recommend that you submit the Pull Request to the official [WPF](https://github.com/dotnet/wpf) repository and then you can ask we to pick the commit to this repository. This repository does not accept commit.
+
+## Reference
+
+- https://github.com/Faithlife/wpf : This is a custom build of Windows Presentation Foundation maintained by Faithlife.
 
 -----
 
