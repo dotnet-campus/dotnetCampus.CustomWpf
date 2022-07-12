@@ -2670,8 +2670,7 @@ namespace System.Windows.Input.StylusWisp
                     //    The transformTabletToView matrix and plugincollection rects though can change based
                     //    off of layout events which is why we need to lock this.
                     GeneralTransformGroup transformTabletToView = new GeneralTransformGroup();
-                    transformTabletToView.Children.Add(new MatrixTransform(GetTabletToViewTransform(
-                        stylusDevice.CriticalActiveSource ?? rawStylusInputReport.InputSource, stylusDevice.TabletDevice))); // this gives matrix in measured units (not device)
+                    transformTabletToView.Children.Add(new MatrixTransform(GetTabletToViewTransform(rawStylusInputReport.InputSource, stylusDevice.TabletDevice))); // this gives matrix in measured units (not device)
                     transformTabletToView.Children.Add(targetPIC.ViewToElement); // Make it relative to the element.
                     transformTabletToView.Freeze();  // Must be frozen for multi-threaded access.
 
@@ -2690,7 +2689,7 @@ namespace System.Windows.Input.StylusWisp
                         if (originalRSI == null)
                         {
                             GeneralTransformGroup transformTabletToView = new GeneralTransformGroup();
-                            transformTabletToView.Children.Add(new MatrixTransform(GetTabletToViewTransform(stylusDevice.CriticalActiveSource ?? rawStylusInputReport.InputSource, stylusDevice.TabletDevice))); // this gives matrix in measured units (not device)
+                            transformTabletToView.Children.Add(new MatrixTransform(GetTabletToViewTransform(rawStylusInputReport.InputSource, stylusDevice.TabletDevice))); // this gives matrix in measured units (not device)
                             transformTabletToView.Children.Add(currentTarget.ViewToElement); // Make it relative to the element.
                             transformTabletToView.Freeze();  // Must be frozen for multi-threaded access.
                             originalRSI = new RawStylusInput(rawStylusInputReport, transformTabletToView, currentTarget);
@@ -3674,11 +3673,11 @@ namespace System.Windows.Input.StylusWisp
         bool _inputEnabled = false;
         bool _updatingScreenMeasurements = false;
         DispatcherOperationCallback _processDisplayChanged;
-        object __penContextsLock = new object();
+        readonly object __penContextsLock = new object();
 
         Dictionary<object, PenContexts> __penContextsMap = new Dictionary<object, PenContexts>(2);
 
-        object __stylusDeviceLock = new object();
+        readonly object __stylusDeviceLock = new object();
         Dictionary<int, StylusDevice> __stylusDeviceMap = new Dictionary<int, StylusDevice>(2);
 
         bool _inDragDrop;
