@@ -20,11 +20,11 @@ jobs:
       run: .\build.cmd -pack -ci -configuration Debug -prepareMachine /p:Platform=x86
     - name: Build CustomWPF
       run: dotnet build CustomWpf
-    # - name: Push
-    #   uses: actions/upload-artifact@v1
-    #   with:
-    #     name: WPF_Debug
-    #     path: ./artifacts/packages/Debug/NonShipping
+    - name: Push
+      uses: actions/upload-artifact@v1
+      with:
+        name: WPF_Debug
+        path: .
 
   BuildRelease:
 
