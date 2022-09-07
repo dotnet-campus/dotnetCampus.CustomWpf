@@ -28,6 +28,24 @@ namespace System.Windows.Input
             return o is UIElement or ContentElement or UIElement3D; 
 }
 
+        // Returns whether the given DynamicObject is a UIElement or not.
+        internal static bool IsUIElement(DependencyObject o)
+        {
+            return UIElementType.IsInstanceOfType(o);     
+        }
+
+        // Returns whether the given DynamicObject is a UIElement3D or not.
+        internal static bool IsUIElement3D(DependencyObject o)
+        {
+            return UIElement3DType.IsInstanceOfType(o);                       
+        }
+
+        // Returns whether the given DynamicObject is a ContentElement or not.
+        internal static bool IsContentElement(DependencyObject o)
+        {
+            return ContentElementType.IsInstanceOfType(o);
+        }
+
         // Returns the containing input element of the given DynamicObject.
         // If onlyTraverse2D is set to true, then we stop once we see a 3D object and return null
         internal static DependencyObject GetContainingUIElement(DependencyObject o, bool onlyTraverse2D)
