@@ -484,19 +484,6 @@ namespace System.Windows.Controls
                     SetSafeArea(_currentToolTip);
                 }
 
-                if (!_currentToolTip.IsOpen)
-                {
-                    // open the tooltip, and finish the initialization when its popup window is available.
-                    _currentToolTip.Opened += OnToolTipOpened;
-                    _currentToolTip.IsOpen = true;
-                }
-                else
-                {
-                    // If the tooltip is already open, initialize it now. This only happens when the
-                    // app manages the tooltip directly.
-                    SetSafeArea(_currentToolTip);
-                }
-
                 CurrentToolTipTimer = new DispatcherTimer(DispatcherPriority.Normal);
                 CurrentToolTipTimer.Interval = TimeSpan.FromMilliseconds(ToolTipService.GetShowDuration(o));
                 CurrentToolTipTimer.Tick += new EventHandler(OnShowDurationTimerExpired);
