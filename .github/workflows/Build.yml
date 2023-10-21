@@ -1,0 +1,38 @@
+name: Build WPF
+
+on: [push]
+
+jobs:
+  BuildDebug:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build WPF
+      run: .\build.cmd -pack -ci -configuration Release -prepareMachine /p:Platform=x86
+    - name: Push
+      uses: actions/upload-artifact@v1
+      with:
+        name: WPF_Debug
+        path: ./artifacts/packages
+
+  # BuildRelease:
+
+  #   runs-on: windows-latest
+
+  #   steps:
+  #   - uses: actions/checkout@v3
+  #   - name: Setup .NET
+  #     uses: actions/setup-dotnet@v3
+  #     with:
+  #       dotnet-version: |
+  #         8.0.x
+  #       dotnet-quality: 'preview'  
+  #   - name: Build WPF
+  #     run: .\build.cmd -pack -ci -configuration Release -prepareMachine /p:Platform=x86
+  #   - name: Push
+  #     uses: actions/upload-artifact@v1
+  #     with:
+  #       name: WPF_Release
+  #       path: ./artifacts/packages/Release/NonShipping
