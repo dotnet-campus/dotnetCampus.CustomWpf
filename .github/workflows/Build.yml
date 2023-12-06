@@ -17,11 +17,18 @@ jobs:
       run: .\build.cmd -pack -ci -configuration Debug -prepareMachine /p:Platform=x86
     - name: Build CustomWPF
       run: dotnet build CustomWpf
+    - name: Pack CustomWPF
+      run: dotnet pack CustomWpf --no-build
     - name: Push
       uses: actions/upload-artifact@v1
       with:
         name: WPF_Debug
         path: ./artifacts/packages/Debug/NonShipping
+    - name: Push
+      uses: actions/upload-artifact@v1
+      with:
+        name: WPF_Debug_Nuget
+        path: ./CustomWpf/bin
 
   BuildRelease:
 
@@ -33,8 +40,10 @@ jobs:
       run: .\build.cmd -pack -ci -configuration Release -prepareMachine /p:Platform=x86
     - name: Build CustomWPF
       run: dotnet build CustomWpf -c Release
+    - name: Pack CustomWPF
+      run: dotnet pack CustomWpf --no-build -c Release
     - name: Push
       uses: actions/upload-artifact@v1
       with:
-        name: WPF_Release
-        path: ./artifacts/packages/Release/NonShipping
+        name: WPF_Release_Nuget
+        path: ./CustomWpf/bin
