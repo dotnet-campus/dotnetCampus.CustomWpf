@@ -1,3 +1,37 @@
+# The Custom Windows Presentation Foundation (WPF)
+
+This repository fork from [WPF](https://github.com/dotnet/wpf), but contains code that is not officially merged.
+
+The reason for creating this repo is that we can't wait for some fascinating features.
+
+![](https://github.com/dotnet-campus/dotnetCampus.CustomWpf/workflows/Build%20WPF/badge.svg)
+
+| NuGet | Version |
+|--|--|
+|dotnetCampus.WPF|[![](https://img.shields.io/nuget/v/dotnetCampus.WPF.svg)](https://www.nuget.org/packages/dotnetCampus.WPF)|
+|dotnetCampus.WPF.Dependencies|[![](https://img.shields.io/nuget/v/dotnetCampus.WPF.Resource.svg)](https://www.nuget.org/packages/dotnetCampus.WPF.Resource)|
+|dotnetCampus.WPF.Resource|[![](https://img.shields.io/nuget/v/dotnetCampus.WPF.Dependencies.svg)](https://www.nuget.org/packages/dotnetCampus.WPF.Dependencies)|
+
+## What version are we on?
+
+[v6.0.4](https://github.com/dotnet/wpf/releases/tag/v6.0.4)
+
+[fcb07d637abf53791e2c55c63d9207fc3232fe83](https://github.com/dotnet/wpf/commit/fcb07d637abf53791e2c55c63d9207fc3232fe83)
+
+## Features
+
+See [Merged PR ¡¤ Issue #10 ¡¤ dotnet-campus/dotnetCampus.CustomWpf](https://github.com/dotnet-campus/dotnetCampus.CustomWpf/issues/10 )
+
+## Contribution
+
+We recommend that you submit the Pull Request to the official [WPF](https://github.com/dotnet/wpf) repository and then you can ask we to pick the commit to this repository. This repository does not accept commit.
+
+## Reference
+
+- https://github.com/Faithlife/wpf : This is a custom build of Windows Presentation Foundation maintained by Faithlife.
+
+-----
+
 # Windows Presentation Foundation (WPF)
 [![.NET Foundation](https://img.shields.io/badge/.NET%20Foundation-blueviolet.svg)](https://www.dotnetfoundation.org/)
 [![Build Status](https://dnceng.visualstudio.com/public/_apis/build/status/dotnet/wpf/dotnet-wpf%20CI)](https://dnceng.visualstudio.com/public/_build/latest?definitionId=270)

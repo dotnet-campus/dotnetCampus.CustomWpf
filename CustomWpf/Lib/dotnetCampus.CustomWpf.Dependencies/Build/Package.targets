@@ -1,0 +1,13 @@
+<Project>
+  <Target Name="CustomWpfResolveReferences"
+          BeforeTargets="ResolveReferences">
+    <PropertyGroup>
+      <CustomWpfRuntimeIdentifier Condition="'$(CustomWpfRuntimeIdentifier)' == ''">$(RuntimeIdentifier)</CustomWpfRuntimeIdentifier>
+      <CustomWpfRuntimeIdentifier Condition="'$(CustomWpfRuntimeIdentifier)' == ''">win-x86</CustomWpfRuntimeIdentifier>
+    </PropertyGroup>
+    <ItemGroup>
+      <ReferenceCopyLocalPaths Include="$(CustomWpfAssetsFolder)lib\net6.0\*.dll" />
+      <ReferenceCopyLocalPaths Include="$(CustomWpfAssetsFolder)\runtimes\$(CustomWpfRuntimeIdentifier)\native\*.dll" />
+    </ItemGroup>
+  </Target>
+</Project>
