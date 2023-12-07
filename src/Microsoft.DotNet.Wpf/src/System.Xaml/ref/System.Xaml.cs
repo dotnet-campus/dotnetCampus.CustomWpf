@@ -1106,4 +1106,11 @@ namespace System.Xaml.Schema
         public static bool operator !=(System.Xaml.Schema.XamlValueConverter<TConverterBase> converter1, System.Xaml.Schema.XamlValueConverter<TConverterBase> converter2) { throw null; }
         public override string ToString() { throw null; }
     }
+
+    public static class XamlObjectCreationFactory
+    {
+        public static void RegisterCreator<T>(Func<T> creator) { }
+        public static void RegisterCreator(Type type, Func<object> creator) { }
+        public static void RegisterTypeCreator(Func<Type, Func<object>> typeCreator) { }
+    }
 }
