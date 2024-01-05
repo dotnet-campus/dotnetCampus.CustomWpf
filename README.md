@@ -4,6 +4,8 @@ This repository fork from [WPF](https://github.com/dotnet/wpf), but contains cod
 
 The reason for creating this repo is that we can't wait for some fascinating features.
 
+Please note: All fixes and new features should be merged into the official [dotnet/wpf](https://github.com/dotnet/wpf) code repository. This repository is solely for the convenience of testing issues and quick experiences. Please do not push your code into this repository. You should always submit pull requests to the official [dotnet/wpf](https://github.com/dotnet/wpf) code repository.
+
 ![](https://github.com/dotnet-campus/dotnetCampus.CustomWpf/workflows/Build%20WPF/badge.svg)
 
 | NuGet | Version |
@@ -14,9 +16,9 @@ The reason for creating this repo is that we can't wait for some fascinating fea
 
 ## What version are we on?
 
-[v6.0.4](https://github.com/dotnet/wpf/releases/tag/v6.0.4)
+[v6.0.26](https://github.com/dotnet/wpf/commit/f2288848ba2510b92757ba88e19b3ff70a4e91f6)
 
-[fcb07d637abf53791e2c55c63d9207fc3232fe83](https://github.com/dotnet/wpf/commit/fcb07d637abf53791e2c55c63d9207fc3232fe83)
+[f2288848ba2510b92757ba88e19b3ff70a4e91f6](https://github.com/dotnet/wpf/commit/f2288848ba2510b92757ba88e19b3ff70a4e91f6)
 
 ## Features
 
